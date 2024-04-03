@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,7 +29,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +68,17 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  @apply: bg-green-400;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+}
+
+.toggle-checkbox:focus + .toggle-label {
+  @apply: shadow-outline;
 }
