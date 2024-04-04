@@ -1,11 +1,10 @@
-import Header from "./components/layouts/Header"
+import Background from "./components/Background/Background.tsx"
 
 function App() {
   
-
   return (
     <div className="container">
-      <Header />
+      <Background/>
     </div>
   )
 }
