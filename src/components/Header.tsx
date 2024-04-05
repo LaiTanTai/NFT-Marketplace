@@ -1,4 +1,4 @@
-import logo from "../../assets/Logo.svg";
+import logo from "../assets/Logo.svg";
 
 const navItems = [
   {
@@ -21,7 +21,7 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header className="w-screen bg-[#100] flex justify-center">
+    <header className="w-screen bg-[transparent] flex justify-center">
       <div className="m-auto h-[60px] flex items-center justify-between mx-5 w-[70%]">
         <div>
           <img src={logo} alt="logo" className="h-[40px]" />

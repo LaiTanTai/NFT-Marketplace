@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Point } from "./Background"
-const Background: React.FC = () => {
+import { Point , BackgroundProps } from "./Background"
+const Background: React.FC<BackgroundProps> = ({children}) => {
   const [randomPoints, setRandomPoints] = useState<Point[]>([]);
 
   useEffect(() => {
-    const numRandomPoints = 4; // Số lượng điểm tím
+    const numRandomPoints = 10; // Số lượng điểm tím
     const newRandomPoints: Point[] = [];
 
     // Tạo ra các điểm tím ngẫu nhiên
@@ -26,6 +26,8 @@ const Background: React.FC = () => {
   // Hàm này để tạo nền gradient kết hợp màu tím và màu đỏ
   const renderBackground = (): React.CSSProperties => {
     return {
+      overflowY:"scroll",
+      overflowX:"hidden",
       position: 'fixed',
       top: 0,
       left: 0,
@@ -40,14 +42,15 @@ const Background: React.FC = () => {
     return randomPoints.map((point, index) => {
       const dotStyle: React.CSSProperties = {
         position: 'absolute',
-        width: '800px',
-        height: '800px',
+        width: '600px',
+        height: '600px',
         borderRadius: '100%',
-        filter: 'blur(100px)', // Áp dụng hiệu ứng blur với bán kính 5px
+        filter: 'blur(180px)',
         opacity: 0.3, // Độ trong suốt của đám mây
-        background: 'radial-gradient(circle,#8F23C2 0%, #110000 50%)',
+        background: '#8F23C2 0%',
         left: `${point.x}px`,
         top: `${point.y}px`,
+        zIndex:-1,
       };
 
       return <div key={index} style={dotStyle}></div>;
@@ -57,6 +60,7 @@ const Background: React.FC = () => {
   return (
     <div style={renderBackground()}>
       {renderPoints()}
+      {children}
     </div>
   );
 };

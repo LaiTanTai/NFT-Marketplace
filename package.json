@@ -10,12 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.15.14",
     "@mysten/dapp-kit": "^0.12.7",
     "@mysten/sui.js": "^0.51.1",
     "@tanstack/react-query": "^5.28.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "tailwindcss-textshadow": "^2.1.3"
   },
   "devDependencies": {
