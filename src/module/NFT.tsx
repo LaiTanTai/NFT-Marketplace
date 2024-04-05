@@ -97,13 +97,13 @@ const NFT: React.FC = () => {
                         <FontAwesomeIcon icon={faMagnifyingGlass}/>
                         <input className="w-full bg-transparent focus:outline-none ml-1 pl-5" placeholder="Filter by Collection ?"/>
                     </div>
-                    <div className="flex flex-wrap justify-between w-full mt-10">
+                    <div className="flex flex-wrap justify-between w-full mt-10 gap-y-10">
                         {
                             data.map((nft: any,index: number)=>{
                                 return (
-                                    <div key={index} className="w-[22%] h-auto relative pt-10">
+                                    <div key={index} className="group w-[22%] h-auto relative pt-10">
                                         <img src={SOLDAD} className="absolute left-[50%] translate-x-[-50%] top-0"/>
-                                        <div className="h-auto border border-[#B530D7] rounded-lg pt-16 pb-5 px-2 bg-[#171929]">
+                                        <div className="group-hover:shadow-[0px_0px_100px_0px_rgba(255,255,255)] h-auto border border-[#B530D7] rounded-lg pt-16 pb-5 px-2 bg-[#171929]">
                                             <p className="text-white text-[18px] font-bold text-center">{nft.name}</p>
                                             <p className="text-white text-[16px] font-base text-center">Speard: {nft.speard}</p>
                                             <div className="flex justify-between">
