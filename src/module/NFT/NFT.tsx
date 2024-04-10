@@ -1,11 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Ligma from "../assets/Ligma.png"
-import SOLDAD from "../assets/SOLDAD.png"
+import Ligma from "../../assets/Ligma.png"
+import SOLDAD from "../../assets/SOLDAD.png"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
 const NFT: React.FC = () => {
-    const data:any = [
+    const data:any[] = [
         {
+            id:1,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -16,6 +17,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:2,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -26,6 +28,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:3,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -36,6 +39,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:4,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -46,6 +50,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:5,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -56,6 +61,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:6,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -66,6 +72,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:7,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -76,6 +83,7 @@ const NFT: React.FC = () => {
             forum:1215
         },
         {
+            id:8,
             name:"SOLANA DAD BOGS",
             speard: "2.5%",
             buy : 2.0,
@@ -87,7 +95,7 @@ const NFT: React.FC = () => {
         }
     ]
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-[100px]">
             <div className="w-[70%] flex justify-center">
                 <div>
                     <img src={Ligma} className="w-full"/>

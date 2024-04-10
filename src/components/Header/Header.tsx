@@ -1,4 +1,8 @@
-import logo from "../assets/Logo.svg";
+import { useState } from "react";
+import logo from "../../assets/WebLogo.png";
+import Metamask from '../../assets/metamask.png'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faClose } from "@fortawesome/free-solid-svg-icons";
 
 const navItems = [
   {
@@ -20,36 +24,28 @@ const navItems = [
 ];
 
 const Header = () => {
+  const [isShow,setIsShow] = useState(false)
   return (
     <header className="w-screen bg-[transparent] flex justify-center">
       <div className="m-auto h-[60px] flex items-center justify-between mx-5 w-[70%]">
-        <div>
-          <img src={logo} alt="logo" className="h-[40px]" />
+        <div className="flex items-center">
+          <div>
+            <img src={logo} alt="logo" className="h-[40px]" />
+          </div>
+          <div>
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                className="text-white mx-5 hover:text-[#67B0DA] text- hover:drop-shadow-md"
+                style={{ textShadow: "0px 0px 14px #FFFFFF" }}
+              >
+                {item.title}
+              </a>
+            ))}
+          </div>
         </div>
-        <div>
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              className="text-white mx-5 hover:text-[#67B0DA] text- hover:drop-shadow-md"
-              style={{ textShadow: "0px 0px 14px #FFFFFF" }}
-            >
-              {item.title}
-            </a>
-          ))}
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Search"
-            className="bg-[#1A1A1A] w-[300px] h-[30px] text-white p-2 rounded-md"
-          />
-        </div>
-        <div >
-          <button className="bg-[#90DFD1] text-black font-extrabold text-xl  p-1 rounded-md">
-            CONNECT WALLET
-          </button>
-        </div>
+      <div className="flex items-center justify-between w-[35%]">
         <label className="inline-flex items-center cursor-pointer text-lg">
           <span className=" mr-3 text-white font-semibold">Lite</span>
           <input type="checkbox" value="" className="sr-only peer" />
@@ -95,7 +91,47 @@ const Header = () => {
             </svg>
           </a>
         </div>
+        <div>
+          <button onClick={()=>setIsShow(true)} className="bg-[#90DFD1] text-black font-extrabold text-xl  p-1 rounded-md">
+            CONNECT WALLET
+          </button>
+        </div>
+        </div>
       </div>
+      <>
+      {/* Overlay */}
+      {isShow && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="w-[40%] h-[80%] bg-white rounded-xl bg-gradient-to-t from-[#423FD2] to-[#B530D7] p-1">
+            <div className=" h-full w-full bg-black rounded-xl">
+              <div className="text-white text-[20px] flex items-center justify-between pt-5 pr-4 pl-8">
+                <p className="text-[30px] font-bold">Connect Wallet</p>
+                <FontAwesomeIcon icon={faClose} onClick={()=>setIsShow(false)} className="text-[#4A4A4A] hover:text-white w-[10%] h-[50px] cursor-pointer"/>
+              </div>
+              <p className="pl-8 text-[#4A4A4A] text-[20px] font-semibold">You need to connected a Sui wallet</p>
+              <div className="mt-12 px-8">
+                <p className="text-[25px] text-white font-semibold">Installed Wallet</p>
+                <div className="flex justify-between mt-3">
+                  <div className="w-[30%] border-2 border-[#4A4A4A] text-center">
+                    <div className="flex justify-center">
+                      <img src={Metamask} className="w-[80%]"/>
+                    </div>
+                    <p className="text-[#7F7F7F] font-semibold text-[20px]">Metamask</p>
+                  </div>
+                </div>
+                <div className="w-[30%] cursor-pointer text-[20px] flex justify-between text-white font-semibold mt-3 items-center">
+                  <p>More Wallet</p>
+                  <FontAwesomeIcon icon={faChevronDown}/>
+                </div>
+              </div>
+              <div className="text-center mt-10">
+                <button className="bg-gradient-to-t from-[#423FD2] to-[#B530D7] w-[60%] text-[30px] rounded-xl text-white">Connect to SUI Wallet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
     </header>
   );
 };
